@@ -26,20 +26,11 @@ public class ExBouton extends JFrame {
 		//Ajout du bouton au panel au dud
 		panel.add(bouton, BorderLayout.SOUTH);
 		//Ajout de l'action sur le bouton
-		bouton.addActionListener(new actionButton());
+		bouton.addActionListener(new ActionButton());
 		//modification du panel de la fenêtre
 		this.setContentPane(panel);
 		//Redéfinition de la taille de la fenêtre
 		this.pack();
-	}
-	
-	private class actionButton implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Vous avez cliqué!");
-		}
-		
 	}
 	
 
