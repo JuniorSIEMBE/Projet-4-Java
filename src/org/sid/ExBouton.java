@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -26,17 +25,21 @@ public class ExBouton extends JFrame {
 		panel.add(label, BorderLayout.NORTH);
 		//Ajout du bouton au panel au dud
 		panel.add(bouton, BorderLayout.SOUTH);
-		//Gestion de l'evênement
-		bouton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("vous avez cliqué!");
-			}
-		});
+		//Ajout de l'action sur le bouton
+		bouton.addActionListener(new actionButton());
 		//modification du panel de la fenêtre
 		this.setContentPane(panel);
 		//Redéfinition de la taille de la fenêtre
 		this.pack();
+	}
+	
+	private class actionButton implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Vous avez cliqué!");
+		}
+		
 	}
 	
 
