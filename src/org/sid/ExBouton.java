@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class ExBouton extends JFrame {
+public class ExBouton extends JFrame implements ActionListener{
 	
 	public ExBouton() {
 		//Appel du constructeur de la classe mère
@@ -26,7 +26,7 @@ public class ExBouton extends JFrame {
 		//Ajout du bouton au panel au dud
 		panel.add(bouton, BorderLayout.SOUTH);
 		//Ajout de l'action sur le bouton
-		bouton.addActionListener(new ActionButton());
+		bouton.addActionListener(this);
 		//modification du panel de la fenêtre
 		this.setContentPane(panel);
 		//Redéfinition de la taille de la fenêtre
@@ -39,6 +39,12 @@ public class ExBouton extends JFrame {
 		ExBouton exemple = new ExBouton();
 		//Affichage de la fenêtre
 		exemple.setVisible(true);
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		System.out.println("Vous avez cliqué!");
 	}
 
 }
